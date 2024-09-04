@@ -43,8 +43,7 @@ public class loginServlet extends HttpServlet {
             out.println("<h1> Nome do Servidor:" + request.getServerName() + "</h1>");
             out.println("<h1>Local da porta do servidor:" + request.getServerPort() + "</h1>");
             out.println("<br><br><h1>Dados enviados do index.html: ");
-            out.println("<h1>Nome:" + request.getParameter("nome_cad"));
-            out.println("<h1>E-mail:" + request.getParameter("email_cad"));
+            out.println("<h1>E-mail:" + request.getParameter("nome_login"));
             out.println("<h1>Senha:" + request.getParameter("senha_cad"));
             out.println("</body>");
             out.println("</html>");
