@@ -12,7 +12,7 @@
                 width: 800px;
                 height: 100px;
             }
-            
+           
             #corpo{
                 background-color: #fff;
                 width: 800px;
@@ -30,8 +30,9 @@
     <body>
         <div align="center">
             <div id="cabecalho"></div>
+            <div id="imagem"> <img src="imagens/error1.jpg"> </div>
             <div id="corpo">
-                <img src="imagens/erro1_20240308-0854.jpg">
+                
                 <hr/>
                 <h3>Email e Senha incorretos</h3><br/>
                 <br/>
