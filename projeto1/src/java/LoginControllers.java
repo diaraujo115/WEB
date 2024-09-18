@@ -19,6 +19,7 @@ public class LoginControllers extends HttpServlet {
             throws ServletException, IOException {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
+        String nome = request.getParameter("nome");
         String sql = "SELECT * FROM tb_login WHERE email = ? AND senha = ?";
         Connection con = null;
         PreparedStatement stmt = null;
@@ -40,6 +41,8 @@ public class LoginControllers extends HttpServlet {
                 // Se encontrou um usuário com o email e senha fornecidos, define a sessão e redireciona para a página logado.jsp
                 HttpSession session = request.getSession();
                 session.setAttribute("email", email);
+                session.setAttribute("nome", nome);
+                
                 request.getRequestDispatcher("logado.jsp").forward(request, response);
             } else {
                 // Se não encontrou, redireciona para a página de erro errodeusuario.jsp
