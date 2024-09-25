@@ -2,6 +2,9 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="br.com.conexao.CriarConexao"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="br.com.login.UsuarioDAO"%>
+<%@page import="br.com.login.Usuario"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -143,14 +146,9 @@
                     <td><%=nome%></td>
                     <td><%=emails%></td>
                     <td><%=senha%></td>
-                    <td>
-
-
-                        <form action="DeletarUsuario" method="post">
-                            <input type="hidden" name="id" value="<%=id%>">
-                            <input type="submit" value="Deletar" class="btn btn-danger">
-                        </form>
-                    </td>
+                    <td><a href="logado.jsp?id=<%=id%>&nome=<%=nome%>&email=<%=emails%>&senha=<%=senha%>">
+                            Editar</a></td>
+                  
                 </tr>
                 <% }
                     rs.close();
@@ -161,7 +159,7 @@
                 <h1>Editar Usuário</h1>
             </table>
 
-            <form action="UpdateLogin" method="post" class="form-group">
+            <form action="logado.jsp" method="post" class="form-group">
                 <strong>Id:</strong>
                 <input type="text" name="id" size="1" value="<%=request.getParameter("id")%>">
 
@@ -182,5 +180,7 @@
             <br><br>
             <a href="remover.jsp" class="btn">Sair</a>
         </div>
+                
+                
     </body>
 </html>
